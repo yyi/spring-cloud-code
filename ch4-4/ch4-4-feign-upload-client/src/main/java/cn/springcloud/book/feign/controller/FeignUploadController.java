@@ -21,7 +21,7 @@ public class FeignUploadController {
 
     @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ApiOperation(value = "文件上传", notes = "请选择文件上传" )
-    public String imageUpload(@ApiParam(value="文件上传",required = true)  MultipartFile file ) throws Exception{
+    public String imageUpload(@ApiParam(value="文件上传",required = true)  MultipartFile file,@ApiParam(value="姓名",required = true)  String name ) throws Exception{
         return fileUploadFeignService.fileUpload(file);
     }
 
